@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dean Palermo — Executive Producer & Digital Strategist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #080808;
+    --off-black: #0f0f0f;
+    --panel: #141414;
+    --border: #1e1e1e;
+    --mid: #2a2a2a;
+    --text-dim: #555;
+    --text-muted: #888;
+    --text-body: #bbb;
+    --text-primary: #e8e8e8;
+    --accent: #00e5c0;
+    --accent-dim: rgba(0,229,192,0.05);
+    --accent-border: rgba(0,229,192,0.2);
+    --gold: #c9a84c;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-serif: 'DM Serif Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--text-body);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(0,229,192,0.04) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .hero-left {
+    position: relative;
+    z-index: 1;
+    padding: 80px 60px 80px 80px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.1s forwards;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(72px, 9vw, 130px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+  .hero-name span { color: var(--accent); }
+
+  .hero-title {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(17px, 2vw, 22px);
+    color: var(--text-muted);
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.35s forwards;
+  }
+
+  .hero-quote {
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 44px;
+    max-width: 440px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.5s forwards;
+  }
+  .hero-quote p {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .hero-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.65s forwards;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.22s ease;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary { background: var(--accent); color: var(--black); }
+  .btn-primary:hover { background: #00ffdb; transform: translateY(-1px); }
+  .btn-ghost { background: transparent; color: var(--text-primary); border: 1px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-right {
+    position: relative;
+    z-index: 1;
+    padding: 80px 80px 80px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.4s forwards;
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+  }
+
+  .stat-card {
+    background: var(--panel);
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+  }
+  .stat-card:hover { background: var(--off-black); }
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .stat-card:hover::before { transform: scaleX(1); }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 48px;
+    line-height: 1;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+  }
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-top: 6px;
+  }
+
+  .location-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border: 1px solid var(--border);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    background: var(--panel);
+  }
+  .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(20px); }
+  }
+
+  /* SECTIONS */
+  .section {
+    position: relative;
+    z-index: 1;
+    padding: 90px 80px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* EXPERIENCE */
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--border);
+    transition: padding 0.2s, background 0.2s;
+  }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-item:hover { background: var(--accent-dim); padding-left: 16px; padding-right: 16px; margin: 0 -16px; }
+
+  .exp-years {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .exp-company {
+    font-family: var(--font-display);
+    font-size: 21px;
+    letter-spacing: 0.06em;
+    color: var(--text-primary);
+    line-height: 1.1;
+  }
+  .exp-role {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+
+  .exp-body h4 {
+    font-family: var(--font-serif);
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+  .exp-body p {
+    font-size: 13.5px;
+    color: var(--text-body);
+    max-width: 600px;
+    margin-bottom: 12px;
+  }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tag {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 11px;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    transition: all 0.2s;
+  }
+  .tag:hover { border-color: var(--accent-border); color: var(--accent); }
+
+  .award-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 4px 10px;
+    margin: 0 6px 6px 0;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--border);
+  }
+  .skill-block {
+    background: var(--panel);
+    padding: 36px 28px;
+    transition: background 0.2s;
+  }
+  .skill-block:hover { background: var(--off-black); }
+  .skill-block h3 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    color: var(--text-primary);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .skill-list { list-style: none; }
+  .skill-list li {
+    font-size: 12px;
+    color: var(--text-body);
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  .skill-list li:last-child { border-bottom: none; }
+
+  /* LINKS */
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--border);
+  }
+  .link-card {
+    background: var(--panel);
+    padding: 30px 28px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .link-card::after {
+    content: '→';
+    position: absolute;
+    top: 26px; right: 26px;
+    font-size: 16px;
+    color: var(--text-dim);
+    transition: all 0.22s;
+  }
+  .link-card:hover { background: var(--off-black); }
+  .link-card:hover::after { color: var(--accent); transform: translate(2px, -2px); }
+
+  .link-category {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .link-name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    color: var(--text-primary);
+    line-height: 1.1;
+  }
+  .link-desc {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.5;
+    max-width: 240px;
+  }
+
+  /* FOOTER */
+  .footer {
+    position: relative;
+    z-index: 1;
+    padding: 56px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-name {
+    font-family: var(--font-display);
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    color: var(--text-primary);
+  }
+  .footer-links { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; }
+  .footer-links a {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy { font-size: 11px; color: var(--text-dim); letter-spacing: 0.06em; }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 60px 32px 40px; }
+    .hero-right { padding: 0 32px 60px; }
+    .section { padding: 64px 32px; }
+    .exp-item { grid-template-columns: 1fr; gap: 14px; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .links-grid { grid-template-columns: 1fr 1fr; }
+    .footer { padding: 40px 32px; }
+  }
+  @media (max-width: 560px) {
+    .skills-grid, .links-grid { grid-template-columns: 1fr; }
+    .stat-row { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-left">
+    <div class="eyebrow">Executive Producer · Digital Strategist · Creative Producer</div>
+    <h1 class="hero-name">DEAN<br><span>PALERMO</span></h1>
+    <p class="hero-title">Where creative vision meets technical execution.</p>
+    <div class="hero-quote">
+      <p>Constant pursuit of bleeding-edge innovation.<br>Wholeheartedly dedicated to creative production and digital marketing.</p>
+    </div>
+    <div class="hero-contact">
+      <a href="mailto:dpalermo@elettro.com" class="btn btn-primary">Get in Touch</a>
+      <a href="https://linkedin.com/in/deanpalermo" target="_blank" class="btn btn-ghost">LinkedIn</a>
+      <a href="https://maps.app.goo.gl/eNccaoyxSLViMnaa9" target="_blank" class="btn btn-ghost">⭐ Google Review</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-num">25+</div>
+        <div class="stat-label">Years Digital</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">170+</div>
+        <div class="stat-label">Songs Distributed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">5.7K</div>
+        <div class="stat-label">YT Subs / 60 Days</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">1B+</div>
+        <div class="stat-label">Video Views</div>
+      </div>
+    </div>
+    <div class="location-pill">
+      <div class="dot"></div>
+      Davie, Florida &nbsp;·&nbsp; (310) 408-6687 &nbsp;·&nbsp; dpalermo@elettro.com
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Work Experience</div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-years">2023 – Present</div>
+        <div class="exp-company">ELETTRO</div>
+        <div class="exp-role">Founder &amp; Executive Producer<br>Lead AI Production Producer</div>
+      </div>
+      <div class="exp-body">
+        <h4>Full-Service Creative Production &amp; Digital Agency — Davie, FL</h4>
+        <p>Running a full-service studio spanning web development, SEO, Google Ads, branding, and AI-powered digital strategy. Custom HTML/CSS GitHub Pages deployments, Shopify and Laravel builds, AI workflow automation via n8n and Make.com. Clients span medical, hospitality, music, and B2B verticals.</p>
+        <p>Projects include Weight Loss Davie patient management platform, Seascape Resort &amp; Marina brand renovation, Navy SEAL Foundation content strategy, and Joanna Krupa YouTube channel strategy.</p>
+        <div class="tags">
+          <span class="tag">AI Workflow</span><span class="tag">Web Dev</span><span class="tag">Google Ads</span><span class="tag">SEO</span><span class="tag">GitHub Pages</span><span class="tag">n8n</span><span class="tag">Vapi Voice Agents</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-years">2024 – Present</div>
+        <div class="exp-company">DON PABLO COFFEE</div>
+        <div class="exp-role">Partnerships &amp;<br>Head of AI Strategy · Miami, FL</div>
+      </div>
+      <div class="exp-body">
+        <h4>AI-Powered Creative &amp; B2B Social Strategy</h4>
+        <p>Directing AI-powered creative production for owned and paid channels. Shaping B2B content narratives and influencer procurement outreach. In-house green screen studio production for high-impact branded video assets across LinkedIn and X.</p>
+        <div class="tags">
+          <span class="tag">B2B Strategy</span><span class="tag">Paid Social</span><span class="tag">AI Production</span><span class="tag">Video</span><span class="tag">LinkedIn</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-years">2022 – 2023</div>
+        <div class="exp-company">AUDIBLE</div>
+        <div class="exp-role">Senior Global Organic Social<br>Project Manager · Amazon</div>
+      </div>
+      <div class="exp-body">
+        <h4>Global Content Strategy Across 10 International Markets</h4>
+        <p>Managed multimillion-dollar budgets for paid social amplification across 10 international markets. Led organic social asset production for all tentpole global releases. Directed talent and IP partnerships with Disney, Marvel, and Apple.</p>
+        <p>Featured IP: Harry Potter, Michelle Obama, DC Comics, Marvel, Disney, Billie Eilish, Dave Grohl, Snoop Dogg, Alicia Keys, Lord of the Rings, James Bond, Sandman, and 50+ global titles.</p>
+        <div class="tags">
+          <span class="tag">Global Strategy</span><span class="tag">IP Management</span><span class="tag">Multi-Market</span><span class="tag">Content Ops</span><span class="tag">DAM Systems</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-years">2009 – 2022</div>
+        <div class="exp-company">ELETTRO</div>
+        <div class="exp-role">Executive Producer<br>Digital Pioneer</div>
+      </div>
+      <div class="exp-body">
+        <h4>13 Years of Digital Innovation &amp; Award-Winning Production</h4>
+        <p>Billions of video views. Grew Maxi Priest's social presence from 250K to 1M followers. Built award-winning digital experiences for major entertainment and hospitality brands.</p>
+        <div style="margin-top:12px;">
+          <span class="award-badge">🏆 Webby Nomination — IFC</span>
+          <span class="award-badge">🏆 Webby Nomination — Morgan's Hotel Group</span>
+          <span class="award-badge">🏆 Promax Award — WEtv</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-years">2006 – 2009</div>
+        <div class="exp-company">BIG INTERACTIVE</div>
+        <div class="exp-role">Senior Digital Producer<br>Account Management</div>
+      </div>
+      <div class="exp-body">
+        <h4>Feature Film &amp; Entertainment Digital Production</h4>
+        <p>Senior Digital Producer with account management responsibilities. Prior role as Digital Project Manager for Disney Pictures / Buena Vista Pictures feature film websites (2006).</p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-years">1998 – 2005</div>
+        <div class="exp-company">EARLY CAREER</div>
+        <div class="exp-role">Click Media · Mindshare<br>Software Spectrum</div>
+      </div>
+      <div class="exp-body">
+        <h4>Digital TV &amp; Film · Sales Leadership · Regional Operations</h4>
+        <p>Digital TV &amp; Film production at Click Media. Regional Sales Team Manager at Mindshare Merchandising. Mid-tier enterprise software sales at Software Spectrum. Foundation in operations, client services, and media production.</p>
+        <div class="tags">
+          <span class="tag">University of Texas at Dallas</span><span class="tag">B.S. Business Administration</span><span class="tag">Class of 1996</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" style="padding-bottom: 0; border-bottom: none;">
+  <div class="section-inner">
+    <div class="section-label">Capabilities</div>
+  </div>
+</section>
+<div style="position:relative; z-index:1; border-bottom: 1px solid var(--border);">
+  <div class="skills-grid">
+    <div class="skill-block">
+      <h3>SOCIAL &amp; CONTENT</h3>
+      <ul class="skill-list">
+        <li>YouTube Channel Strategy</li>
+        <li>Platform-Native Storytelling</li>
+        <li>Video Content Creation</li>
+        <li>Paid Social Amplification</li>
+        <li>Creator-Led Content</li>
+        <li>B2B Tech Content</li>
+        <li>Performance Analytics</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <h3>AI &amp; AUTOMATION</h3>
+      <ul class="skill-list">
+        <li>ChatGPT · Claude · Gemini</li>
+        <li>MidJourney · FLUX.2</li>
+        <li>Runway ML · Sora · Veo</li>
+        <li>Suno · ElevenLabs</li>
+        <li>n8n · Make.com</li>
+        <li>Vapi Voice Agents</li>
+        <li>AI Workflow Automation</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <h3>DIGITAL PRODUCTION</h3>
+      <ul class="skill-list">
+        <li>HTML · CSS · JavaScript</li>
+        <li>GitHub Pages Deployments</li>
+        <li>Shopify · Laravel · WordPress</li>
+        <li>Photoshop · Figma</li>
+        <li>DaVinci Resolve · OBS</li>
+        <li>ProTools Audio</li>
+        <li>Google Ads · SEO · GSC</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <h3>PROJECT OPS</h3>
+      <ul class="skill-list">
+        <li>Jira · Confluence</li>
+        <li>Salesforce · Workday</li>
+        <li>Agile Leadership</li>
+        <li>Integrated Marketing</li>
+        <li>CRM Optimization</li>
+        <li>Brand Governance</li>
+        <li>Vendor Management</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- LINKS HUB -->
+<section class="section" style="padding-bottom: 0; border-bottom: none;">
+  <div class="section-inner">
+    <div class="section-label">The Network</div>
+  </div>
+</section>
+<div style="position:relative; z-index:1; border-bottom: 1px solid var(--border);">
+  <div class="links-grid">
+    <a href="https://elettro.com" target="_blank" class="link-card">
+      <span class="link-category">Agency</span>
+      <span class="link-name">ELETTRO.COM</span>
+      <span class="link-desc">Full-service creative production &amp; digital agency. Interactive capabilities showcase.</span>
+    </a>
+    <a href="https://stashbox.com" target="_blank" class="link-card">
+      <span class="link-category">Music</span>
+      <span class="link-name">STASHBOX.COM</span>
+      <span class="link-desc">Music production home. South Florida live band &amp; global releases.</span>
+    </a>
+    <a href="https://youtube.com/@stashboxband" target="_blank" class="link-card">
+      <span class="link-category">YouTube · Music</span>
+      <span class="link-name">@STASHBOXBAND</span>
+      <span class="link-desc">Official Stashbox artist channel. Originals, tributes &amp; live performances.</span>
+    </a>
+    <a href="https://open.spotify.com/artist/0QMZNPEj7A2MFnT9zJGERa" target="_blank" class="link-card">
+      <span class="link-category">Streaming</span>
+      <span class="link-name">STASHBOX ON SPOTIFY</span>
+      <span class="link-desc">Released catalog across major streaming platforms worldwide.</span>
+    </a>
+    <a href="https://music.apple.com/ie/artist/stashbox/1464431398" target="_blank" class="link-card">
+      <span class="link-category">Streaming</span>
+      <span class="link-name">APPLE MUSIC</span>
+      <span class="link-desc">Full Stashbox catalog on Apple Music.</span>
+    </a>
+    <a href="https://stashboxai.com" target="_blank" class="link-card">
+      <span class="link-category">E-Commerce</span>
+      <span class="link-name">STASHBOX.AI</span>
+      <span class="link-desc">Art merch print-on-demand shop. Also available at Walmart.com.</span>
+    </a>
+    <a href="https://www.youtube.com/@TahitiCoraOfficial" target="_blank" class="link-card">
+      <span class="link-category">YouTube · Music</span>
+      <span class="link-name">TAHITI CORA</span>
+      <span class="link-desc">Official artist channel. Global releases on Spotify &amp; streaming.</span>
+    </a>
+    <a href="https://therasbox.com" target="_blank" class="link-card">
+      <span class="link-category">Music</span>
+      <span class="link-name">THE RAS BOX</span>
+      <span class="link-desc">Music channel and streaming releases for The Ras Box project.</span>
+    </a>
+    <a href="https://floridaontv.com" target="_blank" class="link-card">
+      <span class="link-category">Digital Production</span>
+      <span class="link-name">FLORIDAONTV.COM</span>
+      <span class="link-desc">Digital production platform for Florida-based media content.</span>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-name">DEAN PALERMO</div>
+  <div class="footer-links">
+    <a href="mailto:dpalermo@elettro.com">dpalermo@elettro.com</a>
+    <a href="tel:3104086687">(310) 408-6687</a>
+    <a href="https://linkedin.com/in/deanpalermo" target="_blank">LinkedIn</a>
+    <a href="https://maps.app.goo.gl/eNccaoyxSLViMnaa9" target="_blank">⭐ Leave a Review</a>
+  </div>
+  <div class="footer-copy">© 2026 Elettro · Dean Palermo · All Rights Reserved</div>
+</footer>
+
+</body>
+</html>
