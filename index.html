@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dean Palermo — Executive Producer & Digital Strategist</title>
+<meta name="description" content="Dean Palermo is an executive producer and AI strategist with brand experience across global entertainment, music, ecommerce, public sector, nonprofit, hospitality, medical, legal, and local business digital production.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -455,6 +456,72 @@
   .footer-links a:hover { color: var(--accent); }
   .footer-copy { font-size: 11px; color: var(--text-dim); letter-spacing: 0.06em; }
 
+
+
+  /* PAST CLIENTS */
+  .past-clients-intro {
+    max-width: 920px;
+    margin-bottom: 26px;
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  .past-clients-controls {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .past-clients-search label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  .past-clients-search input {
+    width: 100%;
+    max-width: 560px;
+    background: var(--panel);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    padding: 12px 14px;
+    font: inherit;
+  }
+  .past-clients-search input:focus { outline: 1px solid var(--accent); border-color: var(--accent-border);}
+  .past-clients-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+  .filter-chip {
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text-dim);
+    padding: 7px 12px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .filter-chip.active, .filter-chip:hover { border-color: var(--accent-border); color: var(--accent); }
+  .past-clients-count { font-size: 12px; color: var(--text-dim); margin-bottom: 12px; }
+  .past-clients-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .client-card {
+    background: rgba(20,20,20,0.88);
+    border: 1px solid var(--border);
+    padding: 18px;
+    transition: transform 0.2s, border-color 0.2s;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .client-card:hover { transform: translateY(-2px); border-color: var(--accent-border);}
+  .client-brand { font-family: var(--font-display); font-size: 24px; letter-spacing: 0.04em; line-height: 1.1; }
+  .client-category { font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.09em; margin: 6px 0 10px; }
+  .client-note { font-size: 12px; color: var(--text-body); margin-bottom: 12px; }
+  .client-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .client-tags span { font-size: 10px; border: 1px solid var(--border); padding: 3px 8px; color: var(--text-dim);}
+  .past-clients-empty { border: 1px solid var(--border); background: var(--panel); padding: 20px; color: var(--text-dim);}
+
   /* RESPONSIVE */
   @media (max-width: 960px) {
     .hero { grid-template-columns: 1fr; min-height: auto; }
@@ -464,10 +531,13 @@
     .exp-item { grid-template-columns: 1fr; gap: 14px; }
     .skills-grid { grid-template-columns: 1fr 1fr; }
     .links-grid { grid-template-columns: 1fr 1fr; }
+    .past-clients-grid { grid-template-columns: 1fr 1fr; }
     .footer { padding: 40px 32px; }
   }
   @media (max-width: 560px) {
     .skills-grid, .links-grid { grid-template-columns: 1fr; }
+    .past-clients-grid { grid-template-columns: 1fr; }
+    .past-clients-search input { max-width: none; }
     .stat-row { grid-template-columns: 1fr 1fr; }
   }
 </style>
@@ -732,6 +802,100 @@
     </a>
   </div>
 </div>
+
+
+<!-- PAST CLIENTS -->
+<section class="section" id="past-clients">
+  <div class="section-inner">
+    <div class="section-label">Past Clients</div>
+    <h2 style="font-family: var(--font-serif); font-size: clamp(28px, 4vw, 38px); margin-bottom: 12px;">Past Clients, Partners &amp; Brand Experience</h2>
+    <p class="past-clients-intro"><strong>A searchable directory of media, entertainment, consumer goods, hospitality, health, legal, sports, technology, music, nonprofit, government, ecommerce, and local business experience connected to Dean Palermo’s production, project management, marketing, creative, and digital work.</strong></p>
+    <p class="past-clients-intro">Dean Palermo’s work spans global entertainment campaigns, digital production, ecommerce, social media, AI content, music, nonprofit, public sector, hospitality, medical, legal, and local business projects. This directory gives a fast view of the range of brands, organizations, industries, and creative environments connected to his career, including clients, partners, campaigns, projects, and production environments.</p>
+
+    <div class="past-clients-controls">
+      <div class="past-clients-search">
+        <label for="past-clients-search">Search by brand, industry, category, or keyword</label>
+        <input id="past-clients-search" type="search" placeholder="Search brands and keywords..." aria-label="Search past client directory">
+      </div>
+      <div class="past-clients-filters" id="past-clients-filters"></div>
+    </div>
+    <p class="past-clients-count" id="past-clients-count">Showing 0 brand entries</p>
+    <div class="past-clients-grid" id="past-clients-grid"></div>
+    <p class="past-clients-empty" id="past-clients-empty" hidden>No matching brand entries found.</p>
+  </div>
+</section>
+
+<script>
+(() => {
+  const filters = ['All','Entertainment','Music','Consumer Brands','Public Sector','Nonprofit','Medical','Legal','Hospitality','Ecommerce','Technology','Local Business'];
+  const entries = [
+    ['Audible','Entertainment','Global organic social production and tentpole release coordination across international campaigns.',['amazon','audio','social','entertainment']],
+    ['Amazon','Entertainment','Cross-functional campaign and partner production support across major entertainment launches.',['platform','partner','production']],
+    ['Disney','Entertainment','IP-related production and campaign environment work connected to global entertainment titles.',['ip','franchise']],
+    ['Marvel','Entertainment','Creative and social campaign production support for franchise-driven entertainment releases.',['comics','ip']],
+    ['Harry Potter','Entertainment','Franchise campaign support in global audio and entertainment rollout environments.',['franchise','audio']],
+    ['Billie Eilish','Music','Artist-related campaign production support within global release environments.',['artist','music']],
+    ['Alicia Keys','Music','Social and campaign support tied to artist-centered release programs.',['artist','campaign']],
+    ['Snoop Dogg','Music','Music and entertainment release ecosystem support across digital channels.',['artist','digital']],
+    ['Don Pablo Coffee','Ecommerce','AI strategy, partnership development, private label concepts, and ecommerce presentation support.',['coffee','partnerships','ai']],
+    ['Stashbox','Music','Original music production, artist branding, distribution, merch, and AI-assisted content workflows.',['youtube','merch','ai content']],
+    ['Weight Loss Davie','Medical','Website production, local SEO support, AI schema reporting, and compliant digital strategy.',['medical','seo','local']],
+    ['Seascape Resort & Marina','Hospitality','Resort website production, booking strategy planning, and local destination content support.',['resort','booking','seo']],
+    ['University of Miami Bascom Palmer','Public Sector','Digital and production support connected to medical and education environments.',['education','medical']],
+    ['Rosenberg Injury Law','Legal','Legal-industry content production and digital visibility support for service-focused growth.',['law','content']],
+    ['Navy SEAL Foundation','Nonprofit','Mission-driven content strategy and campaign support for nonprofit communications.',['mission','fundraising']],
+    ['Shopify','Technology','Ecommerce build and production experience in platform-based storefront environments.',['ecommerce','web']],
+    ['WordPress','Technology','Web publishing and marketing infrastructure production across multiple client initiatives.',['cms','web']],
+    ['FloridaOnTV','Local Business','Regional media production and digital content execution for Florida-focused audiences.',['regional','media']],
+    ['Elettro','Technology','Agency-led production across websites, branding, SEO, and AI-enabled operations.',['agency','ai','seo']],
+    ['Morgan’s Hotel Group','Hospitality','Award-recognized digital production environment experience in hospitality marketing.',['webby','hotel']]
+  ].map(([name, category, note, tags]) => ({name, category, note, tags}));
+
+  const chipWrap = document.getElementById('past-clients-filters');
+  const input = document.getElementById('past-clients-search');
+  const grid = document.getElementById('past-clients-grid');
+  const count = document.getElementById('past-clients-count');
+  const empty = document.getElementById('past-clients-empty');
+  let activeFilter = 'All';
+
+  const normalize = (v) => v.toLowerCase();
+  const render = () => {
+    const q = normalize(input.value.trim());
+    const filtered = entries.filter((entry) => {
+      const byFilter = activeFilter === 'All' || entry.category === activeFilter;
+      const haystack = [entry.name, entry.category, entry.note, ...entry.tags].join(' ').toLowerCase();
+      return byFilter && (!q || haystack.includes(q));
+    });
+
+    grid.innerHTML = filtered.map((entry) => `
+      <article class="client-card">
+        <h3 class="client-brand">${entry.name}</h3>
+        <p class="client-category">${entry.category}</p>
+        <p class="client-note">${entry.note}</p>
+        <div class="client-tags">${entry.tags.map((tag) => `<span>${tag}</span>`).join('')}</div>
+      </article>`).join('');
+
+    count.textContent = `Showing ${filtered.length} brand entries`;
+    empty.hidden = filtered.length !== 0;
+  };
+
+  filters.forEach((filter) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'filter-chip' + (filter === 'All' ? ' active' : '');
+    btn.textContent = filter;
+    btn.addEventListener('click', () => {
+      activeFilter = filter;
+      chipWrap.querySelectorAll('button').forEach((b) => b.classList.toggle('active', b.textContent === filter));
+      render();
+    });
+    chipWrap.appendChild(btn);
+  });
+
+  input.addEventListener('input', render);
+  render();
+})();
+</script>
 
 <!-- FOOTER -->
 <footer class="footer">
