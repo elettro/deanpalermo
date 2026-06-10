@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Euro Cruise 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B2340;
+  --navy-mid:#162F50;
+  --ocean:#1A6FA8;
+  --teal:#0D8A6A;
+  --coral:#C4502A;
+  --amber:#C07A14;
+  --sea:#5A7A8A;
+  --page-bg:#F4F7FB;
+  --card:#FFFFFF;
+  --text:#1A2332;
+  --text-2:#4A5568;
+  --muted:#8A9BB0;
+  --border:#DDE5EE;
+  --border-light:#EEF2F7;
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--page-bg);color:var(--text);font-size:15px;line-height:1.5}
+
+/* ── HERO ── */
+.hero{background:var(--navy);color:#fff;padding:52px 24px 40px;text-align:center}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,14vw,130px);letter-spacing:0.06em;line-height:1;color:#fff}
+.hero-rule{width:72px;height:3px;background:var(--ocean);margin:18px auto 16px}
+.hero-tag{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:5px}
+.hero-dates{font-size:18px;font-weight:500;color:rgba(255,255,255,0.9);letter-spacing:0.04em}
+.hero-ship{font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-top:10px}
+
+/* ── STATS BAR ── */
+.stats{background:var(--navy-mid);display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:14px 16px;text-align:center;border-right:1px solid rgba(255,255,255,0.07)}
+.stat:last-child{border-right:none}
+.stat-lbl{font-size:9px;text-transform:uppercase;letter-spacing:0.13em;color:rgba(255,255,255,0.42);display:block;margin-bottom:3px}
+.stat-val{font-size:13px;font-weight:500;color:#fff}
+
+/* ── ALERT BAR ── */
+.alert-bar{background:#FFF8E6;border-bottom:2px solid #F5C340;padding:11px 20px;display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#7A5500}
+.alert-icon{font-size:15px;flex-shrink:0;margin-top:1px}
+
+/* ── CONTAINER ── */
+.wrap{max-width:820px;margin:0 auto;padding:32px 20px 72px}
+
+/* ── SECTION LABELS ── */
+.sec-lbl{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:0.18em;color:var(--muted);margin-bottom:12px;margin-top:36px;padding-bottom:6px;border-bottom:1px solid var(--border-light)}
+.wrap .sec-lbl:first-child{margin-top:0}
+
+/* ── TIMELINE ── */
+.day-row{display:flex;gap:12px;margin-bottom:5px}
+.spine{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:30px}
+.dot{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px;color:#fff;border:2px solid var(--page-bg)}
+.conn{width:2px;flex:1;min-height:8px;background:var(--border)}
+.card{flex:1;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;cursor:pointer;transition:box-shadow .15s}
+.card:hover{box-shadow:0 2px 14px rgba(11,35,64,0.09)}
+.card.open{box-shadow:0 2px 14px rgba(11,35,64,0.12)}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start}
+.ddate-row{display:flex;align-items:center;gap:6px;margin-bottom:2px;flex-wrap:wrap}
+.ddate{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
+.dtitle{font-weight:600;font-size:14px;color:var(--text);margin-bottom:1px}
+.dloc{font-size:12px;color:var(--muted)}
+.chev{font-size:16px;color:var(--border);flex-shrink:0;transition:transform .2s;margin-left:8px;margin-top:2px;user-select:none}
+.card.open .chev{transform:rotate(180deg)}
+.details{display:none;border-top:1px solid var(--border-light);margin-top:10px;padding-top:10px}
+.card.open .details{display:block}
+.dlist{list-style:none;padding:0;margin:0}
+.dlist li{font-size:13px;color:var(--text-2);padding:2px 0;line-height:1.65;display:flex;gap:8px}
+.dlist .bullet{flex-shrink:0;font-weight:600}
+.badge-warn{background:#FFF3CC;color:#7A5500;font-size:9px;font-weight:600;padding:2px 8px;border-radius:20px;letter-spacing:0.04em;text-transform:uppercase}
+.board-pill{background:#E8F5EE;border:1px solid #9DD5B8;border-radius:8px;padding:8px 12px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#0A6848;margin-bottom:8px}
+.board-icon{font-size:14px}
+
+/* type colors */
+.c-flight{color:var(--ocean)}
+.c-hotel{color:var(--amber)}
+.c-embark,.c-disembark{color:var(--coral)}
+.c-port{color:var(--teal)}
+.c-sea{color:var(--sea)}
+.dot-flight{background:var(--ocean)}
+.dot-hotel{background:var(--amber)}
+.dot-embark,.dot-disembark{background:var(--coral)}
+.dot-port{background:var(--teal)}
+.dot-sea{background:var(--sea)}
+.card.bl-flight{border-left:3px solid var(--ocean)}
+.card.bl-hotel{border-left:3px solid var(--amber)}
+.card.bl-embark,.card.bl-disembark{border-left:3px solid var(--coral)}
+.card.bl-port{border-left:3px solid var(--teal)}
+.card.bl-sea{border-left:3px solid var(--sea)}
+
+/* ── REF CARDS ── */
+.rcard{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin-bottom:12px}
+.rcard-hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.rcard-name{font-weight:600;font-size:16px;color:var(--text);margin-bottom:2px}
+.rcard-sub{font-size:12px;color:var(--muted)}
+.badge-ok{background:#E6F4EC;color:#1A7A47;font-size:10px;font-weight:600;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:0.05em;white-space:nowrap}
+.stars{color:#D4A017;font-size:12px;margin-top:1px}
+.igrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.igrid3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.icell{background:var(--page-bg);border-radius:8px;padding:8px 10px}
+.clbl{font-size:9px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);display:block;margin-bottom:3px}
+.cval{font-size:13px;font-weight:600;color:var(--text)}
+.cval.mono{font-family:'Courier New',monospace;font-size:14px}
+.cval.lg{font-size:16px}
+.crow{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding-top:12px;border-top:1px solid var(--border-light)}
+.crow a{color:var(--ocean);text-decoration:none;font-size:13px;font-weight:500;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.crow a:hover{text-decoration:underline}
+.bids{display:flex;gap:24px;padding-top:10px;border-top:1px dashed var(--border);margin-top:10px}
+.room-txt{font-size:13px;color:var(--text-2);line-height:1.5;margin-bottom:4px}
+.perks-txt{font-size:12px;color:#1A7A47;font-weight:500}
+.inline-warn{background:#FFF8E6;border:1px solid #F5C340;border-radius:8px;padding:8px 12px;font-size:12px;color:#7A5500;display:flex;gap:6px;align-items:flex-start;margin-bottom:10px;line-height:1.5}
+.port-list{font-size:13px;color:var(--text-2);margin-bottom:12px;line-height:1.6}
+.board-ref{background:#E8F5EE;border:1px solid #9DD5B8;border-radius:8px;padding:9px 14px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#0A6848;margin-bottom:12px}
+
+/* border-left on ref cards */
+.rcard.bl-amber{border-left:3px solid var(--amber)}
+.rcard.bl-coral{border-left:3px solid var(--coral)}
+.rcard.bl-teal{border-left:3px solid var(--teal)}
+.rcard.bl-ocean{border-left:3px solid var(--ocean)}
+
+/* ── PRINT ── */
+@media print{
+  .details{display:block!important}
+  .chev{display:none}
+  body{background:#fff}
+  .hero,.stats{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .alert-bar{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* ── MOBILE ── */
+@media(max-width:520px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .crow{grid-template-columns:1fr 1fr}
+  .igrid3{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-title">EURO CRUISE</div>
+  <div class="hero-rule"></div>
+  <div class="hero-tag">Family vacation &nbsp;&middot;&nbsp; 2 adults, 2 kids</div>
+  <div class="hero-dates">June 17 &ndash; 29, 2026</div>
+  <div class="hero-ship">Celebrity Xcel &nbsp;&middot;&nbsp; Greece &nbsp;&middot;&nbsp; Malta &nbsp;&middot;&nbsp; Turkey &nbsp;&middot;&nbsp; Spain</div>
+</header>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stat"><span class="stat-lbl">Depart</span><span class="stat-val">Jun 17, FLL</span></div>
+  <div class="stat"><span class="stat-lbl">Embark</span><span class="stat-val">Jun 19, Piraeus</span></div>
+  <div class="stat"><span class="stat-lbl">Disembark</span><span class="stat-val">Jun 27, Barcelona</span></div>
+  <div class="stat"><span class="stat-lbl">Return</span><span class="stat-val">Jun 29, MIA</span></div>
+</div>
+
+<!-- ALERT BAR -->
+<div class="alert-bar">
+  <span class="alert-icon">&#9888;</span>
+  <span><strong>Action needed:</strong> Outbound flight still not confirmed &mdash; book FLL &rarr; Athens (ATH) departing ~June 17, must arrive before 2:00&nbsp;PM hotel check-in in Piraeus on June 18.</span>
+</div>
+
+<!-- MAIN WRAP -->
+<div class="wrap">
+
+  <!-- ITINERARY -->
+  <div class="sec-lbl">Day by Day &mdash; tap any card to expand</div>
+  <div id="tl"></div>
+
+  <!-- HOTELS -->
+  <div class="sec-lbl">Hotels</div>
+
+  <div class="rcard bl-amber">
+    <div class="rcard-hd">
+      <div><div class="rcard-name">Piraeus City Hotel</div><div class="stars">&#9733;&#9733;&#9733;&#9734;&#9734;</div></div>
+      <span class="badge-ok">Confirmed</span>
+    </div>
+    <div class="igrid">
+      <div class="icell"><span class="clbl">Dates</span><span class="cval">Jun 18 &ndash; 19 &middot; 1 night</span></div>
+      <div class="icell"><span class="clbl">Check-in / out</span><span class="cval">2:00 PM &ndash; 12:00 PM</span></div>
+    </div>
+    <p class="room-txt">Family room &mdash; 2 queens + 2 bunk beds + 1 double bed</p>
+    <p class="perks-txt">&#10003; Express check-in &nbsp;&middot;&nbsp; Complimentary Wi-Fi</p>
+    <div class="crow" style="margin-top:12px">
+      <div><span class="clbl">Phone</span><span class="cval" style="font-size:13px">+30 210 411 0555</span></div>
+      <div><span class="clbl">Email</span><a href="mailto:info@piraeuscityhotel.com">info@piraeuscityhotel.com</a></div>
+      <div><span class="clbl">Website</span><a href="https://www.piraeuscityhotel.com" target="_blank">piraeuscityhotel.com</a></div>
+    </div>
+    <div class="bids">
+      <div><span class="clbl">Booking ID</span><span class="cval mono">997986950</span></div>
+      <div><span class="clbl">Reference ID</span><span class="cval mono">6390637893</span></div>
+    </div>
+  </div>
+
+  <div class="rcard bl-coral">
+    <div class="rcard-hd">
+      <div><div class="rcard-name">Cosmo Apartments Sants</div><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div></div>
+      <span class="badge-ok">Confirmed</span>
+    </div>
+    <div class="igrid">
+      <div class="icell"><span class="clbl">Dates</span><span class="cval">Jun 27 &ndash; 29 &middot; 2 nights</span></div>
+      <div class="icell"><span class="clbl">Check-in / out</span><span class="cval">3:00 PM &ndash; 11:00 AM</span></div>
+    </div>
+    <p class="room-txt">Loft Suite &mdash; outdoor view, 463 sq ft, 1 sofa bed + 1 double, non-smoking</p>
+    <div class="crow" style="margin-top:12px">
+      <div><span class="clbl">Phone</span><span class="cval" style="font-size:13px">+34 933 393 786</span></div>
+      <div><span class="clbl">Email</span><a href="mailto:info@cosmopolitagroup.com">info@cosmopolitagroup.com</a></div>
+      <div><span class="clbl">Website</span><a href="https://cosmoapart.com" target="_blank">cosmoapart.com</a></div>
+    </div>
+    <div class="bids">
+      <div><span class="clbl">Booking ID</span><span class="cval mono">997969042</span></div>
+      <div><span class="clbl">Reference ID</span><span class="cval mono">5271227969</span></div>
+    </div>
+  </div>
+
+  <!-- CRUISE -->
+  <div class="sec-lbl">Cruise</div>
+
+  <div class="rcard bl-teal">
+    <div class="rcard-hd">
+      <div><div class="rcard-name">Celebrity Xcel &mdash; 8-night cruise</div><div class="rcard-sub">Jun 19 Athens (Piraeus) to Jun 27 Barcelona</div></div>
+      <span class="badge-ok">Confirmed</span>
+    </div>
+    <p class="port-list">Santorini &nbsp;&middot;&nbsp; Rhodes &nbsp;&middot;&nbsp; Mykonos &nbsp;&middot;&nbsp; Kusadasi, Turkey &nbsp;&middot;&nbsp; Valletta, Malta</p>
+    <div class="board-ref">
+      <span class="board-icon">&#9200;</span>
+      Boarding window: 2:30 PM &ndash; 3:00 PM &nbsp;&middot;&nbsp; June 19
+    </div>
+    <div class="igrid3">
+      <div class="icell"><span class="clbl">Reservation</span><span class="cval mono lg">5347531</span></div>
+      <div class="icell"><span class="clbl">Ship</span><span class="cval">Celebrity Xcel</span></div>
+      <div class="icell"><span class="clbl">Loyalty tier</span><span class="cval">Classic</span></div>
+    </div>
+    <div class="crow">
+      <div><span class="clbl">Phone</span><span class="cval" style="font-size:13px">1-800-647-2251</span></div>
+      <div><span class="clbl">Email</span><a href="mailto:cxc@celebrity.com">cxc@celebrity.com</a></div>
+      <div><span class="clbl">Website</span><a href="https://www.celebritycruises.com" target="_blank">celebritycruises.com</a></div>
+    </div>
+  </div>
+
+  <!-- AIRLINE -->
+  <div class="sec-lbl">Airline</div>
+
+  <div class="rcard bl-ocean">
+    <div class="rcard-hd">
+      <div><div class="rcard-name">Finnair</div><div class="rcard-sub">Return flight &middot; Barcelona (BCN) to Miami (MIA) &middot; Jun 29</div></div>
+      <span class="badge-ok">Confirmed</span>
+    </div>
+    <div class="inline-warn">
+      <span style="flex-shrink:0;font-size:13px">&#9888;</span>
+      <span>Outbound flight (FLL to Athens, ~Jun 17) still needs to be booked or confirmed with Finnair.</span>
+    </div>
+    <div class="crow" style="border-top:none;padding-top:0">
+      <div><span class="clbl">Phone (US 24/7)</span><span class="cval" style="font-size:13px">1-877-757-7143</span></div>
+      <div><span class="clbl">Contact</span><a href="https://www.finnair.com/us-en/customer-care-and-contact-information" target="_blank">finnair.com/us-en</a></div>
+      <div><span class="clbl">Website</span><a href="https://www.finnair.com/us-en" target="_blank">finnair.com</a></div>
+    </div>
+  </div>
+
+</div><!-- /.wrap -->
+
+<script>
+const TYPE_COLOR={flight:'#1A6FA8',hotel:'#C07A14',embark:'#C4502A',disembark:'#C4502A',port:'#0D8A6A',sea:'#5A7A8A'};
+const TYPE_ICON={flight:'&#9992;',hotel:'&#8962;',embark:'&#9875;',disembark:'&#9875;',port:'&#9679;',sea:'&sim;'};
+
+const days=[
+  {d:'Jun 17',dn:'Tue',t:'flight',title:'Departure day',loc:'Fort Lauderdale, FL',warn:true,
+   info:['Depart FLL &mdash; outbound flight still TBD, book ASAP','Destination: Athens (ATH), direct or via connecting hub','Pack passports, travel docs, and cruise confirmation','Piraeus City Hotel check-in is June 18 at 2:00 PM']},
+  {d:'Jun 18',dn:'Wed',t:'hotel',title:'Arrive Athens &mdash; Piraeus',loc:'Piraeus, Greece',
+   info:['Arrive Athens (ATH) &mdash; transfer to Piraeus (~40 min by metro or taxi)','Check-in: Piraeus City Hotel at 2:00 PM','Room: Family &mdash; 2 queens, 2 bunk beds, 1 double bed','Benefits: Express check-in and complimentary Wi-Fi','Booking ID: 997986950 &nbsp;/&nbsp; Ref: 6390637893']},
+  {d:'Jun 19',dn:'Thu',t:'embark',title:'Embark Celebrity Xcel',loc:'Athens (Piraeus), Greece',board:true,
+   info:['Hotel checkout by 12:00 PM','Head to Piraeus cruise terminal after checkout','Cruise Reservation: 5347531 &nbsp;|&nbsp; Loyalty: Classic tier','Option: explore the Acropolis or Acropolis Museum before boarding','Sail away from Piraeus in the evening']},
+  {d:'Jun 20',dn:'Fri',t:'port',title:'Santorini',loc:'Santorini, Greece',
+   info:['Iconic whitewashed villages and blue-domed churches','Oia hilltop &mdash; best sunset views on the island','Akrotiri Minoan archaeological site','Hot springs at Nea Kameni island','Wine tasting in Pyrgos or Megalochori']},
+  {d:'Jun 21',dn:'Sat',t:'port',title:'Rhodes',loc:'Rhodes, Greece',
+   info:['Medieval Old Town &mdash; UNESCO World Heritage Site','Street of the Knights and Palace of the Grand Masters','Lindos village &mdash; hike up to the ancient Acropolis','Temple of Venus ruins and ancient city walls']},
+  {d:'Jun 22',dn:'Sun',t:'port',title:'Mykonos',loc:'Mykonos, Greece',
+   info:['Whitewashed alleyways and iconic windmills','Little Venice waterfront neighborhood','Paradise Beach and other sandy shores','Great dining and beach clubs']},
+  {d:'Jun 23',dn:'Mon',t:'port',title:'Ephesus (Kusadasi)',loc:'Kusadasi, Turkey',
+   info:['Turkey port &mdash; have passports accessible','UNESCO World Heritage ruins of ancient Ephesus','Library of Celsus (built 117 AD) and the Great Theater','Temple of Artemis &mdash; one of the 7 Wonders of the World']},
+  {d:'Jun 24',dn:'Tue',t:'sea',title:'Day at sea',loc:'Mediterranean Sea',
+   info:['Pool deck, spa, and wellness on Celebrity Xcel','Kids programs and onboard activities','Specialty dining and evening entertainment','Good day to pre-book any Barcelona excursions']},
+  {d:'Jun 25',dn:'Wed',t:'port',title:'Valletta, Malta',loc:'Valletta, Malta',
+   info:['Co-Cathedral of St. John &mdash; stunning baroque interior','Upper Barrakka Gardens with harbor views','Mdina &ldquo;Silent City&rdquo; &mdash; medieval cobblestone streets','Blue Grotto sea caves and Marsaxlokk fishing village','Fresh seafood and local Maltese wines']},
+  {d:'Jun 26',dn:'Thu',t:'sea',title:'Day at sea',loc:'Western Mediterranean',
+   info:['Final sea day &mdash; enjoy pool, spa, entertainment','Pack and prepare luggage for disembarkation tomorrow','Cosmo Apartments Sants check-in is June 27 at 3:00 PM']},
+  {d:'Jun 27',dn:'Fri',t:'disembark',title:'Disembark &mdash; Barcelona',loc:'Barcelona, Spain',
+   info:['Disembark Celebrity Xcel at Barcelona cruise terminal','Transfer to Cosmo Apartments Sants (~20 min by taxi)','Check-in at 3:00 PM &mdash; Loft Suite, outdoor view, 463 sq ft','Room: 1 sofa bed and 1 double bed, non-smoking','Booking ID: 997969042 &nbsp;/&nbsp; Ref: 5271227969','Explore Gaud&iacute; architecture, Sagrada Fam&iacute;lia, Las Ramblas']},
+  {d:'Jun 28',dn:'Sat',t:'hotel',title:'Barcelona &mdash; free day',loc:'Barcelona, Spain',
+   info:['Park G&uuml;ell and Casa Batll&oacute; (Gaud&iacute; landmarks)','Barceloneta Beach for sun and Mediterranean water','Tapas bars and seafood in the Gothic Quarter','Montju&iuml;c hilltop with botanical gardens and city views','Picasso Museum and Joan Mir&oacute; Foundation']},
+  {d:'Jun 29',dn:'Sun',t:'flight',title:'Return to Miami',loc:'Barcelona (BCN) to Miami (MIA)',
+   info:['Hotel checkout by 11:00 AM','Head to Barcelona El Prat Airport (BCN)','Depart Barcelona to Miami (MIA) &mdash; confirm flight time','Arrive Miami International Airport &mdash; trip complete']}
+];
+
+function buildTL(){
+  const tl=document.getElementById('tl');
+  let h='';
+  days.forEach((day,i)=>{
+    const last=i===days.length-1;
+    const conn=last?'':'<div class="conn"></div>';
+    const badge=day.warn?'<span class="badge-warn">Action needed</span>':'';
+    const boardPill=day.board?`<div class="board-pill"><span class="board-icon">&#9200;</span>Boarding window: 2:30 PM &ndash; 3:00 PM</div>`:'';
+    const items=day.info.map(x=>`<li><span class="bullet" style="color:${TYPE_COLOR[day.t]}">&ndash;</span><span>${x}</span></li>`).join('');
+    h+=`
+    <div class="day-row">
+      <div class="spine">
+        <div class="dot dot-${day.t}">${TYPE_ICON[day.t]}</div>
+        ${conn}
+      </div>
+      <div class="card bl-${day.t}" onclick="this.classList.toggle('open')">
+        <div class="card-top">
+          <div style="flex:1;min-width:0">
+            <div class="ddate-row">
+              <span class="ddate c-${day.t}">${day.d} &mdash; ${day.dn}</span>
+              ${badge}
+            </div>
+            <div class="dtitle">${day.title}</div>
+            <div class="dloc">${day.loc}</div>
+          </div>
+          <span class="chev">&#9660;</span>
+        </div>
+        <div class="details">
+          ${boardPill}
+          <ul class="dlist">${items}</ul>
+        </div>
+      </div>
+    </div>`;
+  });
+  tl.innerHTML=h;
+}
+buildTL();
+</script>
+</body>
+</html>
