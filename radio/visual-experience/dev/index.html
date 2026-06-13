@@ -7,10 +7,9 @@
   <link rel="stylesheet" href="/radio-admin/admin-header.css">
 </head>
 <body class="stashbox-admin">
-  <header class="stashbox-admin-header" aria-label="Global Admin Header">
+  <header class="stashbox-admin-header" aria-label="Visuals Experience CMS Header">
     <div class="stashbox-admin-header__inner">
       <span class="stashbox-admin-header__eyebrow">Stashbox Radio Admin</span>
-      <!-- Shared macro admin header: keep link text and URLs aligned across Radio CMS tools. -->
       <nav class="stashbox-admin-nav" aria-label="Radio admin tools">
         <a class="stashbox-admin-nav__link" href="/radio-admin/dev/">Song CMS Dev</a>
         <a class="stashbox-admin-nav__link" href="/radio-admin/ads/dev/">Ads CMS Dev</a>
@@ -21,27 +20,33 @@
       </nav>
     </div>
   </header>
+
   <main class="stashbox-admin-main">
-    <section class="stashbox-admin-card">
-      <h1>Visuals Experience CMS</h1>
+    <section class="stashbox-admin-card" aria-labelledby="visuals-experience-title">
+      <h1 id="visuals-experience-title">Visuals Experience CMS</h1>
       <p>Manage reusable visuals folders for Stashbox Radio images and video clips.</p>
+
       <button class="stashbox-admin-button" type="button">Create Visuals Folder</button>
+
       <div class="stashbox-admin-grid" aria-label="Visuals Experience CMS placeholder sections">
         <section class="stashbox-admin-section">
           <h2>Visuals Folders</h2>
-          <p>Placeholder for creating, organizing, and reviewing reusable Visuals Folders.</p>
+          <p>Create reusable folders for Stashbox branded visuals, artist visuals, genre visuals, mood visuals, song visuals, and campaign visuals.</p>
         </section>
+
         <section class="stashbox-admin-section">
           <h2>Folder Media Library</h2>
-          <p>Placeholder for future image and video clip management within each Visuals Folder.</p>
+          <p>Upload and manage JPG, JPEG, PNG, WEBP, and MP4 files inside each Visuals Folder in a later phase.</p>
         </section>
+
         <section class="stashbox-admin-section">
           <h2>Song Relevance Mapping</h2>
-          <p>Placeholder for mapping songs to relevant Visuals Folders without backend wiring yet.</p>
+          <p>Later, connect Visuals Folders to song titles, artists, genres, and moods from the Song CMS.</p>
         </section>
       </div>
     </section>
   </main>
+
   <footer class="stashbox-admin-footer">COPYRIGHT &amp; TRADEMARKED BY <a href="https://Elettro.com">ELETTRO</a> 2026 · <a href="https://stashbox.com">Stashbox</a></footer>
 </body>
 </html>
