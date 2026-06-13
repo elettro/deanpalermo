@@ -199,6 +199,24 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
   border:1px solid rgba(201,168,76,0.25);padding:4px 10px;margin:0 6px 6px 0;
 }
 
+.exp-feature{position:relative;background:linear-gradient(135deg,rgba(0,229,192,0.035),rgba(201,168,76,0.025));border:1px solid var(--border);padding:36px;margin:0 0 0}
+.exp-feature:hover{border-color:var(--accent-border);margin:0;padding:36px;background:linear-gradient(135deg,rgba(0,229,192,0.055),rgba(201,168,76,0.035))}
+.exp-eyebrow{font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.exp-list{padding-left:18px;margin:14px 0 0;max-width:760px}
+.exp-list li{font-size:13px;color:var(--text-body);margin-bottom:9px;line-height:1.65}
+.exp-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0}
+.metric-card{background:rgba(8,8,8,0.35);border:1px solid var(--border);border-radius:0;padding:14px;transition:border-color 0.2s,transform 0.2s}
+.metric-card:hover{border-color:var(--accent-border);transform:translateY(-1px)}
+.metric-card strong{display:block;font-family:var(--font-display);font-size:28px;letter-spacing:0.04em;line-height:1;color:var(--text-primary)}
+.metric-card span{display:block;margin-top:6px;font-size:10px;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-dim);line-height:1.35}
+.exp-links{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:24px}
+.exp-cta-button{display:inline-flex;align-items:center;justify-content:center;padding:13px 24px;background:var(--accent);color:var(--black);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;line-height:1;transition:background 0.22s,transform 0.22s}
+.exp-cta-button:hover,.exp-cta-button:focus{background:#00ffdb;transform:translateY(-1px)}
+.exp-report-link{display:inline-flex;align-items:center;color:var(--text-primary);border:1px solid var(--border);padding:12px 20px;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:border-color 0.22s,color 0.22s}
+.exp-report-link:hover,.exp-report-link:focus{border-color:var(--accent-border);color:var(--accent)}
+@media(max-width:960px){.exp-feature,.exp-feature:hover{padding:28px}.exp-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.exp-feature,.exp-feature:hover{padding:22px}.exp-metrics{grid-template-columns:1fr}.exp-links{align-items:stretch;flex-direction:column}.exp-cta-button,.exp-report-link{width:100%;justify-content:center}}
+
 /* Audible talent ticker */
 .talent-ticker-wrap{
   margin:16px 0;overflow:hidden;
@@ -387,6 +405,44 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
         <p>Key productions: <strong>Seascape Resort &amp; Marina</strong> (SeascapeResortandMarina.com · FL Keys), <strong>Blue Card National Nonprofit</strong> (Holocaust survivor support), <strong>Weight Loss Davie</strong> medical clinic, <strong>MBEInitiative.com</strong> California Bar Exam prep, <strong>Rosenberg Injury Law</strong>, <strong>Navy SEAL Foundation</strong>, <strong>NeverThirst Water</strong>, <strong>FIU</strong>, <strong>University of Miami Bascom Palmer</strong>.</p>
         <div class="tags">
           <span class="tag">Web Dev</span><span class="tag">AI Schema 9+/10</span><span class="tag">Google Ads</span><span class="tag">SEO</span><span class="tag">GitHub Pages</span><span class="tag">Make.com</span><span class="tag">Google Sheets CMS</span><span class="tag">Laravel</span><span class="tag">WordPress</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- STASHBOX RADIO -->
+    <div class="exp-item exp-feature" id="stashbox-radio">
+      <div class="exp-meta">
+        <div class="exp-years">June 2026</div>
+        <div class="exp-company">STASHBOX RADIO</div>
+        <div class="exp-role">Founder &amp; Product Architect<br>Custom Music, Video, Commerce, Ads, CMS &amp; Analytics Platform</div>
+      </div>
+      <div class="exp-body">
+        <p class="exp-eyebrow">Built from scratch</p>
+        <h4>Full Custom Music Media Platform Built From Scratch</h4>
+        <p>Built Stashbox Radio from scratch as a custom RDS-backed music, video, merchandise, advertising, and analytics platform. The public experience feels simple: listeners play songs, watch videos, like, share, shop, and move through the catalog. Underneath, the system runs a custom CMS, admin dashboard, API layer, PostgreSQL database, media storage, ad controller, product placement system, and event tracking.</p>
+        <p>The core concept is direct audience ownership. Instead of relying only on major streaming platforms, an artist, brand, or media company owns more of the listener experience directly. They get the audience data, engagement stats, product placements, and ad inventory inside their own media system.</p>
+        <ul class="exp-list">
+          <li>Built a custom song CMS for managing audio, artwork, video links, metadata, visibility, product URLs, public notes, and backend stats.</li>
+          <li>Created a public radio player with audio-only tracks, song-plus-video records, video-only records, YouTube embeds, filters, shuffle, deep links, likes, shares, and play tracking.</li>
+          <li>Designed a media experience where each song connects to its own artwork, image assets, video clips, Shopify product spots, and song-specific merchandise links.</li>
+          <li>Engineered persistent engagement tracking for likes, shares, play starts, full plays, listening time, product clicks, video clicks, ad starts, ad clicks, ad skips, and ad completes.</li>
+          <li>Built a custom Ads CMS with video ad inventory, click URLs, skip rules, active and hidden status, ratio labels, frequency weights, and targeting fields for genre, mood, artist, and song.</li>
+          <li>Added a YouTube-style ad break system with master ads on/off, count-based ad breaks, seconds-based ad breaks, skip countdowns, Learn More buttons, and multi-ad break progress.</li>
+          <li>Established a safer development and production workflow separating public player, dev player, admin, ads admin, and dashboard environments.</li>
+        </ul>
+        <div class="exp-metrics">
+          <div class="metric-card"><strong>33+</strong><span>RDS-managed tracks</span></div>
+          <div class="metric-card"><strong>3</strong><span>Active ad inventory tests</span></div>
+          <div class="metric-card"><strong>2</strong><span>Ad break methodologies</span></div>
+          <div class="metric-card"><strong>Live</strong><span>Dev-to-production workflow</span></div>
+        </div>
+        <div class="tags" aria-label="Technology stack">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Node.js 22.x</span><span class="tag">SQL</span><span class="tag">PostgreSQL</span><span class="tag">AWS RDS</span><span class="tag">AWS Lambda</span><span class="tag">API Gateway</span><span class="tag">S3</span><span class="tag">CloudWatch</span><span class="tag">DBeaver</span><span class="tag">JSON</span><span class="tag">REST APIs</span><span class="tag">GitHub Pages</span><span class="tag">Shopify</span><span class="tag">YouTube Embeds</span>
+        </div>
+        <div class="exp-links">
+          <a class="exp-cta-button" href="https://stashbox.com/radio/" target="_blank" rel="noopener">Launch Stashbox Radio</a>
+          <a class="exp-report-link" href="https://stashbox.com/radio/report/" target="_blank" rel="noopener">View Project Report</a>
         </div>
       </div>
     </div>
