@@ -191,7 +191,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--page-bg);color:va
 <!-- ALL CONFIRMED BAR -->
 <div class="confirmed-bar">
   <span class="confirmed-icon">&#10003;</span>
-  <span>All flights and accommodations confirmed &mdash; eDreams booking ref: <strong>24778530298</strong></span>
+  <span>All flights and accommodations confirmed</span>
 </div>
 
 <!-- MAIN WRAP -->
@@ -220,10 +220,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--page-bg);color:va
       <div><span class="clbl">Email</span><a href="mailto:info@piraeuscityhotel.com">info@piraeuscityhotel.com</a></div>
       <div><span class="clbl">Website</span><a href="https://www.piraeuscityhotel.com" target="_blank">piraeuscityhotel.com</a></div>
     </div>
-    <div class="bids">
-      <div><span class="clbl">Booking ID</span><span class="cval mono">997986950</span></div>
-      <div><span class="clbl">Reference ID</span><span class="cval mono">6390637893</span></div>
-    </div>
   </div>
 
   <div class="rcard bl-coral">
@@ -241,10 +237,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--page-bg);color:va
       <div><span class="clbl">Email</span><a href="mailto:info@cosmopolitagroup.com">info@cosmopolitagroup.com</a></div>
       <div><span class="clbl">Website</span><a href="https://cosmoapart.com" target="_blank">cosmoapart.com</a></div>
     </div>
-    <div class="bids">
-      <div><span class="clbl">Booking ID</span><span class="cval mono">997969042</span></div>
-      <div><span class="clbl">Reference ID</span><span class="cval mono">5271227969</span></div>
-    </div>
   </div>
 
   <!-- CRUISE -->
@@ -260,8 +252,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--page-bg);color:va
       <span style="font-size:14px">&#9200;</span>
       Boarding window: 2:30 PM &ndash; 3:00 PM &nbsp;&middot;&nbsp; June 19
     </div>
-    <div class="igrid3">
-      <div class="icell"><span class="clbl">Reservation</span><span class="cval mono lg">5347531</span></div>
+    <div class="igrid">
       <div class="icell"><span class="clbl">Ship</span><span class="cval">Celebrity Xcel</span></div>
       <div class="icell"><span class="clbl">Loyalty tier</span><span class="cval">Classic</span></div>
     </div>
@@ -332,7 +323,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--page-bg);color:va
 
     <div class="igrid" style="margin-top:10px;margin-bottom:0">
       <div class="icell"><span class="clbl">Total duration</span><span class="cval">15h 40m</span></div>
-      <div class="icell"><span class="clbl">Airline reference</span><span class="cval mono">ZUPUTL</span></div>
     </div>
   </div>
 
@@ -364,9 +354,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--page-bg);color:va
       </div>
     </div>
 
-    <div class="igrid4" style="margin-top:10px;margin-bottom:0">
-      <div class="icell"><span class="clbl">Airline reference</span><span class="cval mono">7ZT3AN</span></div>
-      <div class="icell"><span class="clbl">eDreams booking</span><span class="cval mono">24778530298</span></div>
+    <div class="igrid" style="margin-top:10px;margin-bottom:0">
       <div class="icell"><span class="clbl">Phone (US 24/7)</span><span class="cval" style="font-size:12px">1-877-757-7143</span></div>
       <div class="icell"><span class="clbl">Website</span><a href="https://www.finnair.com/us-en" target="_blank" style="color:var(--ocean);font-size:12px;font-weight:600;text-decoration:none">finnair.com</a></div>
     </div>
@@ -383,9 +371,9 @@ const days=[
    customDetail:true,
    info:[]},
   {d:'Jun 18',dn:'Thu',t:'hotel',title:'Arrive Athens &mdash; Piraeus',loc:'Piraeus, Greece',
-   info:['Arrive Athens (ATH) at 11:10 AM','Transfer to Piraeus (~40 min by metro or taxi)','Check-in: Piraeus City Hotel at 2:00 PM','Room: Family &mdash; 2 queens, 2 bunk beds, 1 double bed','Benefits: Express check-in and complimentary Wi-Fi','Booking ID: 997986950 &nbsp;/&nbsp; Ref: 6390637893']},
+   info:['Arrive Athens (ATH) at 11:10 AM','Transfer to Piraeus (~40 min by metro or taxi)','Check-in: Piraeus City Hotel at 2:00 PM','Room: Family &mdash; 2 queens, 2 bunk beds, 1 double bed','Benefits: Express check-in and complimentary Wi-Fi']},
   {d:'Jun 19',dn:'Thu',t:'embark',title:'Embark Celebrity Xcel',loc:'Athens (Piraeus), Greece',board:true,
-   info:['Hotel checkout by 12:00 PM','Head to Piraeus cruise terminal after checkout','Cruise Reservation: 5347531 &nbsp;|&nbsp; Loyalty: Classic tier','Option: explore the Acropolis or Acropolis Museum before boarding','Sail away from Piraeus in the evening']},
+   info:['Hotel checkout by 12:00 PM','Head to Piraeus cruise terminal after checkout','Loyalty status: Classic tier','Option: explore the Acropolis or Acropolis Museum before boarding','Sail away from Piraeus in the evening']},
   {d:'Jun 20',dn:'Fri',t:'port',title:'Santorini',loc:'Santorini, Greece',
    info:['Iconic whitewashed villages and blue-domed churches','Oia hilltop &mdash; best sunset views on the island','Akrotiri Minoan archaeological site','Hot springs at Nea Kameni island','Wine tasting in Pyrgos or Megalochori']},
   {d:'Jun 21',dn:'Sat',t:'port',title:'Rhodes',loc:'Rhodes, Greece',
@@ -401,11 +389,11 @@ const days=[
   {d:'Jun 26',dn:'Thu',t:'sea',title:'Day at sea',loc:'Western Mediterranean',
    info:['Final sea day &mdash; enjoy pool, spa, entertainment','Pack and prepare luggage for disembarkation tomorrow','Cosmo Apartments Sants check-in is June 27 at 3:00 PM']},
   {d:'Jun 27',dn:'Fri',t:'disembark',title:'Disembark &mdash; Barcelona',loc:'Barcelona, Spain',
-   info:['Disembark Celebrity Xcel at Barcelona cruise terminal','Transfer to Cosmo Apartments Sants (~20 min by taxi)','Check-in at 3:00 PM &mdash; Loft Suite, outdoor view, 463 sq ft','Room: 1 sofa bed and 1 double bed, non-smoking','Booking ID: 997969042 &nbsp;/&nbsp; Ref: 5271227969','Explore Gaud&iacute; architecture, Sagrada Fam&iacute;lia, Las Ramblas']},
+   info:['Disembark Celebrity Xcel at Barcelona cruise terminal','Transfer to Cosmo Apartments Sants (~20 min by taxi)','Check-in at 3:00 PM &mdash; Loft Suite, outdoor view, 463 sq ft','Room: 1 sofa bed and 1 double bed, non-smoking','Explore Gaud&iacute; architecture, Sagrada Fam&iacute;lia, Las Ramblas']},
   {d:'Jun 28',dn:'Sat',t:'hotel',title:'Barcelona &mdash; free day',loc:'Barcelona, Spain',
    info:['Park G&uuml;ell and Casa Batll&oacute; (Gaud&iacute; landmarks)','Barceloneta Beach for sun and Mediterranean water','Tapas bars and seafood in the Gothic Quarter','Montju&iuml;c hilltop with botanical gardens and city views','Picasso Museum and Joan Mir&oacute; Foundation']},
   {d:'Jun 29',dn:'Sun',t:'flight',title:'Return to Miami &mdash; Finnair AY5399',loc:'Barcelona (BCN) &rarr; Miami (MIA)',
-   info:['Hotel checkout by 11:00 AM','Head to Barcelona El Prat Airport (BCN)','Depart BCN 3:30 PM on Finnair AY5399','Arrive Miami International Airport (MIA) 8:00 PM','Flight duration: 10h 30m &nbsp;|&nbsp; Airline ref: 7ZT3AN']}
+   info:['Hotel checkout by 11:00 AM','Head to Barcelona El Prat Airport (BCN)','Depart BCN 3:30 PM on Finnair AY5399','Arrive Miami International Airport (MIA) 8:00 PM','Flight duration: 10h 30m']}
 ];
 
 const JUN17_DETAIL = `
@@ -447,9 +435,8 @@ const JUN17_DETAIL = `
       <span style="background:#fff;border:1px solid #DDE5EE;border-radius:20px;font-size:10px;font-weight:500;color:#4A5568;padding:2px 8px">Arrives Thu Jun 18</span>
     </div>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px">
+  <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-top:6px">
     <div style="background:#F4F7FB;border-radius:8px;padding:8px 10px"><span style="font-size:9px;text-transform:uppercase;letter-spacing:0.1em;color:#8A9BB0;display:block;margin-bottom:3px">Total duration</span><span style="font-size:13px;font-weight:600;color:#1A2332">15h 40m</span></div>
-    <div style="background:#F4F7FB;border-radius:8px;padding:8px 10px"><span style="font-size:9px;text-transform:uppercase;letter-spacing:0.1em;color:#8A9BB0;display:block;margin-bottom:3px">Airline reference</span><span style="font-size:13px;font-weight:600;color:#1A2332;font-family:'Courier New',monospace">ZUPUTL</span></div>
   </div>
 `;
 
