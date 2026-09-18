@@ -1,64 +1,33 @@
 # Dean Palermo
+Digital Growth, AI, Content & Marketing Technology Leader
+Location: Davie, Florida
+Website: https://deanpalermo.com/
+Portfolio: https://elettro.com/
+LinkedIn: https://linkedin.com/in/deanpalermo
 
-> Dean Palermo is an executive producer, digital strategist, creative producer, AI production director, and founder of Elettro Incorporated. He is based in Davie, Florida and has more than 25 years of experience in digital production, marketing, web development, content, music, and emerging technology.
+Professional summary:
+Dean Palermo has 20+ years of experience building customer acquisition programs, digital platforms, content systems, ecommerce operations and high-volume marketing programs. His current work combines executive-level production leadership with hands-on expertise across generative AI, paid media, SEO/AIO, analytics, ecommerce, custom web development, automation and cloud infrastructure.
 
-## Canonical Website
+Current proof points:
+- Completed 50+ comprehensive SEO and AI Optimization audits within an intensive two-month period in 2026.
+- Rebuilt and optimized selected properties using custom HTML, CSS, JavaScript, JSON-LD, GitHub Pages, WordPress, Shopify and cloud infrastructure, with multiple properties reaching 90+ targeted SEO and AI optimization benchmarks.
+- Conceived, architected, developed and launched Stashbox Radio as a proprietary music, video, advertising, ecommerce, analytics and content-management platform using HTML, CSS, JavaScript, Node.js, AWS Lambda, API Gateway, PostgreSQL/RDS, S3, REST APIs, GitHub Pages and Shopify integrations.
+- Produced and distributed 170+ original songs. Grew the Stashbox YouTube channel from 115 to 6,700+ subscribers in approximately two months.
+- Built SolarMeister from concept to market as a Germany-only, German-language residential solar ecommerce brand for Neckermann Strom GmbH.
+- Designed and developed the SolarMeister Shopify platform supporting approximately 3,000 purchasable product variations.
+- Developed SolarMeister supplier-product synchronization workflows governing inventory availability, product status, pricing and variants.
+- Built SolarMeister acquisition infrastructure across Google Search Console, Google Merchant Center, Google Ads, Google Business Profile, GA4, product feeds, conversion tracking, structured data and search visibility.
+- Led global organic social production at Audible / Amazon supporting approximately $15 million in annual production activity and a 42-person organization across 10 international markets.
 
-- [Dean Palermo Official Website](https://deanpalermo.com/)
-- [Current Resume PDF](https://deanpalermo.com/Dean_Palermo_Resume_June_12_2026.pdf)
-- [Elettro Studio](https://elettro.com/)
-- [LinkedIn](https://linkedin.com/in/deanpalermo)
+AI and production stack:
+Claude, ChatGPT, Gemini, AI-assisted coding, agentic workflows, prompt systems, Runway, MidJourney, FLUX, Suno, ElevenLabs, Pro Tools, HTML, CSS, JavaScript, PHP, Laravel, Node.js, AWS Lambda, API Gateway, S3, RDS, Shopify, GA4, Google Merchant Center, Google Ads, Search Console, JSON-LD, Salesforce, Jira, Confluence and Airtable.
 
-## Core Expertise
+Selected current projects:
+- SolarMeister: https://solarmeister-shop.de/
+- Stashbox Radio: https://stashbox.com/radio/
+- Elettro: https://elettro.com/
+- AIO Authority: https://aioauthority.com/
 
-- Executive production and digital strategy
-- Website design and development
-- SEO and AI search optimization
-- Google Ads and performance marketing
-- AI content production and workflow automation
-- Social media strategy and platform-native content
-- Music production, artist branding, and global distribution
-- Product architecture, CMS development, analytics, and ecommerce
-- Project operations, creative leadership, and multi-market production
-
-## Current Work
-
-### Elettro Incorporated
-
-Dean Palermo is the founder and executive producer of Elettro, a full-service creative production and digital agency. Elettro builds websites, improves SEO and AI-search readiness, manages Google Ads, produces content, and develops automation systems.
-
-- [Elettro.com](https://elettro.com/)
-- [AIO Authority](https://aioauthority.com/)
-
-### Stashbox Radio
-
-Dean designed and built Stashbox Radio as a custom music, video, merchandise, advertising, CMS, and analytics platform. The system includes a public player, song administration, visual experiences, listener engagement tracking, advertising controls, product placement, PostgreSQL data, AWS services, and a development-to-production workflow.
-
-- [Stashbox Radio](https://stashbox.com/radio/)
-- [Stashbox Radio Project Report](https://stashbox.com/radio/report/)
-
-### Stashbox
-
-Dean is the founder and executive producer of Stashbox. The project includes original music, global distribution, artist branding, video, social growth, and ecommerce.
-
-- [Stashbox](https://stashbox.com/)
-- [Stashbox YouTube](https://youtube.com/@stashboxband)
-- [Stashbox on Spotify](https://open.spotify.com/artist/0QMZNPEj7A2MFnT9zJGERa)
-- [Stashbox.ai](https://stashbox.ai/)
-
-## Selected Experience
-
-- Senior Global Organic Social Project Manager at Audible and Amazon
-- Managed major international content programs across 10 markets
-- Led high-profile entertainment, publishing, political, music, and cultural productions
-- Produced award-winning digital work for media, hospitality, consumer, nonprofit, legal, healthcare, sports, and technology organizations
-- Past recognition includes Webby nominations and a Promax Award
-- Built and operated digital products and campaigns generating more than one billion video views
-
-## Technology
-
-HTML, CSS, JavaScript, Node.js, SQL, PostgreSQL, AWS RDS, AWS Lambda, API Gateway, S3, CloudWatch, REST APIs, JSON, GitHub Pages, Shopify, Laravel, WordPress, Google Sheets CMS systems, Make.com, n8n, ChatGPT, Claude, Gemini, MidJourney, Runway, Sora, Veo, Suno, ElevenLabs, Photoshop, Figma, DaVinci Resolve, OBS, and Pro Tools.
-
-## Contact
-
-Use the contact links on [deanpalermo.com](https://deanpalermo.com/) for professional inquiries.
+Primary resume files:
+- PDF: https://deanpalermo.com/Dean_Palermo_Resume_September_2026.pdf
+- Word: https://deanpalermo.com/Dean_Palermo_Resume_September_2026.docx

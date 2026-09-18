@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dean Palermo — Executive Producer & Digital Strategist</title>
-<meta name="description" content="Dean Palermo is an executive producer and AI strategist with brand experience across global entertainment, music, ecommerce, public sector, nonprofit, hospitality, medical, legal, and local business digital production.">
+<title>Dean Palermo — Digital Growth, AI, Content & Marketing Technology</title>
+<meta name="description" content="Dean Palermo is a digital growth, AI, content and marketing technology leader with 20+ years of experience spanning AI production, SEO/AIO, ecommerce, custom web development, paid media, automation, global content operations and digital product development.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -204,7 +204,7 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
 .exp-eyebrow{font-size:10px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
 .exp-list{padding-left:18px;margin:14px 0 0;max-width:760px}
 .exp-list li{font-size:13px;color:var(--text-body);margin-bottom:9px;line-height:1.65}
-.exp-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0}
+.exp-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}
 .metric-card{background:rgba(8,8,8,0.35);border:1px solid var(--border);border-radius:0;padding:14px;transition:border-color 0.2s,transform 0.2s}
 .metric-card:hover{border-color:var(--accent-border);transform:translateY(-1px)}
 .metric-card strong{display:block;font-family:var(--font-display);font-size:28px;letter-spacing:0.04em;line-height:1;color:var(--text-primary)}
@@ -303,6 +303,31 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
 .footer-links a:hover{color:var(--accent)}
 .footer-copy{font-size:11px;color:var(--text-dim);letter-spacing:0.06em}
 
+
+/* ── CURRENT PROOF / VISUAL SYSTEM ── */
+.proof-band{position:relative;z-index:1;padding:58px 80px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#0b0b0b 0%,#080808 100%)}
+.proof-inner{max-width:1200px;margin:0 auto}
+.proof-head{display:flex;align-items:end;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-bottom:28px}
+.proof-head h2{font-family:var(--font-display);font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:.04em;color:var(--text-primary)}
+.proof-head p{max-width:640px;color:var(--text-muted);font-size:13px}
+.proof-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.proof-card{border:1px solid var(--border);background:var(--panel);padding:22px;min-height:150px;transition:transform .2s,border-color .2s}
+.proof-card:hover{transform:translateY(-2px);border-color:var(--accent-border)}
+.proof-kicker{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.proof-card strong{display:block;font-family:var(--font-display);font-size:34px;letter-spacing:.03em;color:#fff;line-height:1.05;margin:12px 0 8px}
+.proof-card span{font-size:12px;color:var(--text-dim);line-height:1.5}
+.logo-wall{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:2px;background:var(--border);margin-top:24px}
+.logo-cell{background:#101010;min-height:82px;display:flex;align-items:center;justify-content:center;padding:20px;gap:9px;flex-direction:column}
+.logo-cell img{width:28px;height:28px;object-fit:contain;opacity:.9}
+.logo-cell span{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-dim);text-align:center}
+.project-visual{margin:22px 0 18px;border:1px solid var(--border);overflow:hidden;background:#0b0b0b}
+.project-visual img{display:block;width:100%;aspect-ratio:16/7;object-fit:cover;object-position:top center;filter:saturate(.92) contrast(1.02)}
+#stashbox-radio .project-visual img{aspect-ratio:auto;height:auto;object-fit:contain;filter:none}
+.project-visual-caption{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:10px 13px;border-top:1px solid var(--border);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim)}
+.project-visual-caption a{color:var(--accent);text-decoration:none}
+@media(max-width:960px){.proof-band{padding:48px 32px}.proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.logo-wall{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.proof-grid{grid-template-columns:1fr}.logo-wall{grid-template-columns:repeat(3,minmax(0,1fr))}.project-visual img{aspect-ratio:4/3}}
+
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
   .top-bar{padding:12px 32px}
@@ -334,14 +359,14 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
 <div class="top-bar">
   <div class="top-bar-label">Dean Palermo · Resume &amp; Portfolio</div>
   <div class="top-bar-btns">
-    <a href="https://deanpalermo.com/Dean_Palermo_Resume_June_12_2026.pdf" target="_blank" rel="noopener" class="btn-pop">
-      <span>👁</span>&nbsp;Preview Resume PDF
+    <a href="https://deanpalermo.com/Dean_Palermo_Resume_September_2026.pdf" target="_blank" rel="noopener" class="btn-pop">
+      Preview Resume PDF
     </a>
-    <a href="https://deanpalermo.com/Dean_Palermo_Resume_June_12_2026.docx" download class="btn-pop">
-      <span>⬇</span>&nbsp;Download .docx
+    <a href="https://deanpalermo.com/Dean_Palermo_Resume_September_2026.docx" download class="btn-pop">
+      Download Resume .docx
     </a>
     <a href="https://Elettro.com" target="_blank" rel="noopener" class="btn-pop accent-pop">
-      <span>⚡</span>&nbsp;View Portfolio — Elettro.com
+      View Portfolio — Elettro.com
     </a>
   </div>
 </div>
@@ -351,11 +376,11 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
   <div class="hero-bg"></div>
   <div class="hero-grid-lines"></div>
   <div class="hero-left">
-    <div class="eyebrow">Executive Producer · Digital Strategist · Creative Producer</div>
+    <div class="eyebrow">Digital Growth · AI · Content · Marketing Technology</div>
     <h1 class="hero-name">DEAN<br><span>PALERMO</span></h1>
-    <p class="hero-title">Where creative vision meets technical execution.</p>
+    <p class="hero-title">Strategy, systems, content and growth. Built end to end.</p>
     <div class="hero-quote">
-      <p>Constant pursuit of bleeding-edge innovation.<br>Wholeheartedly dedicated to creative production and digital marketing.</p>
+      <p>20+ years building acquisition programs, digital platforms, ecommerce operations, content systems and high-volume marketing programs. Hands-on across AI, SEO/AIO, paid media, automation, cloud infrastructure and production.</p>
     </div>
     <div class="hero-contact">
       <a href="mailto:dpalermo@elettro.com" class="btn btn-primary">Get in Touch</a>
@@ -365,10 +390,10 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
   </div>
   <div class="hero-right">
     <div class="stat-row">
-      <div class="stat-card"><div class="stat-num">25+</div><div class="stat-label">Years Digital</div></div>
-      <div class="stat-card"><div class="stat-num">170+</div><div class="stat-label">Songs Distributed</div></div>
-      <div class="stat-card"><div class="stat-num">6,700+</div><div class="stat-label">YouTube Subs</div></div>
-      <div class="stat-card"><div class="stat-num">1B+</div><div class="stat-label">Video Views</div></div>
+      <div class="stat-card"><div class="stat-num">20+</div><div class="stat-label">Years Digital Growth</div></div>
+      <div class="stat-card"><div class="stat-num">50+</div><div class="stat-label">SEO / AIO Audits · 2 Months</div></div>
+      <div class="stat-card"><div class="stat-num">3,000</div><div class="stat-label">Solar Ecommerce Variations</div></div>
+      <div class="stat-card"><div class="stat-num">170+</div><div class="stat-label">Original Songs Distributed</div></div>
     </div>
     <div class="location-pill">
       <div class="dot"></div>
@@ -381,12 +406,43 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
 <div class="portfolio-strip">
   <div class="portfolio-strip-copy">
     <h2>FULL PORTFOLIO &amp; AGENCY</h2>
-    <p>Web design &amp; development, AI search optimization, Google Ads, content production, music, and more — see every service and project at Elettro Studio.</p>
+    <p>Digital growth, AI strategy, custom development, SEO/AIO, paid media, ecommerce, automation and content production. See the broader client and project portfolio at Elettro Studio.</p>
   </div>
   <a href="https://Elettro.com" target="_blank" rel="noopener" class="btn-portfolio">
     Elettro.com <span class="btn-portfolio-arrow">↗</span>
   </a>
 </div>
+
+
+<!-- ── CURRENT PROOF ── -->
+<section class="proof-band" aria-label="Current digital growth and AI work">
+  <div class="proof-inner">
+    <div class="proof-head">
+      <div>
+        <div class="section-label" style="margin-bottom:18px">Current Operating Range</div>
+        <h2>STRATEGY THROUGH EXECUTION</h2>
+      </div>
+      <p>Recent work spans technical SEO and AI search optimization, custom HTML/CSS/JavaScript builds, Shopify commerce, AWS-backed product development, AI video, image generation, original music, paid acquisition and multi-profile social operations.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card"><div class="proof-kicker">Search + Authority</div><strong>50+</strong><span>SEO and AI Optimization audits completed within an intensive two-month period, with selected properties rebuilt toward 90+ targeted performance benchmarks.</span></div>
+      <div class="proof-card"><div class="proof-kicker">Commerce Build</div><strong>3,000</strong><span>Approximate purchasable SolarMeister product variations across solar systems, panels, batteries, inverters, mounting, accessories and related categories.</span></div>
+      <div class="proof-card"><div class="proof-kicker">Media Platform</div><strong>RDS + AWS</strong><span>Custom music, video, advertising, ecommerce, analytics and CMS architecture powering Stashbox Radio.</span></div>
+      <div class="proof-card"><div class="proof-kicker">AI Content Production</div><strong>VIDEO + AUDIO</strong><span>Commercial video, social content, image generation, voice, original music, campaign creative and automated publishing workflows.</span></div>
+    </div>
+    <div class="logo-wall" aria-label="Technology and production stack">
+      <div class="logo-cell"><img src="https://cdn.simpleicons.org/anthropic/ffffff" alt="Anthropic Claude"><span>Claude</span></div>
+      <div class="logo-cell"><img src="https://cdn.simpleicons.org/openai/ffffff" alt="OpenAI"><span>ChatGPT</span></div>
+      <div class="logo-cell"><img src="https://cdn.simpleicons.org/googlegemini/ffffff" alt="Google Gemini"><span>Gemini</span></div>
+      <div class="logo-cell"><img src="https://cdn.simpleicons.org/shopify/ffffff" alt="Shopify"><span>Shopify</span></div>
+      <div class="logo-cell"><img src="https://cdn.simpleicons.org/amazonwebservices/ffffff" alt="AWS"><span>AWS</span></div>
+      <div class="logo-cell"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub"><span>GitHub</span></div>
+      <div class="logo-cell"><img src="https://cdn.simpleicons.org/googleads/ffffff" alt="Google Ads"><span>Google Ads</span></div>
+      <div class="logo-cell"><img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube"><span>YouTube</span></div>
+      <div class="logo-cell"><img src="https://cdn.simpleicons.org/adobe/ffffff" alt="Adobe"><span>Adobe</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- ── EXPERIENCE ── -->
 <section class="section">
@@ -401,11 +457,12 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
         <div class="exp-role">Founder &amp; Executive Producer<br>Lead AI Production Director · Davie, FL</div>
       </div>
       <div class="exp-body">
-        <h4>Full-Service Creative Production &amp; Digital Agency</h4>
-        <p>Full-service studio spanning web design &amp; development, SEO, AI search optimization, Google Ads, and automation. Consistently achieving 9+ out of 10 SEO and AI schema validation scores. Builds include Google Sheets-powered CMS architectures — clients update live content from a spreadsheet with zero developer involvement.</p>
+        <h4>Digital Growth, AI Strategy, Development &amp; Content Operations</h4>
+        <p>Lead digital growth, AI strategy, custom web development, SEO/AIO, paid media, analytics, ecommerce, automation and content programs across healthcare, hospitality, nonprofit, professional services, retail and entertainment. Completed 50+ comprehensive SEO and AI Optimization audits within the past two months, covering technical SEO, structured data, crawl architecture, content authority, AI discoverability, conversion paths, local visibility and competitive positioning.</p>
+        <p>Rebuild and optimize selected properties using custom HTML, CSS, JavaScript, JSON-LD, GitHub Pages, WordPress, Shopify and cloud infrastructure. Multiple properties have reached 90+ targeted SEO and AI optimization benchmarks.</p>
         <p>Key productions: <strong>Seascape Resort &amp; Marina</strong> (SeascapeResortandMarina.com · FL Keys), <strong>Blue Card National Nonprofit</strong> (Holocaust survivor support), <strong>Weight Loss Davie</strong> medical clinic, <strong>MBEInitiative.com</strong> California Bar Exam prep, <strong>Rosenberg Injury Law</strong>, <strong>Navy SEAL Foundation</strong>, <strong>NeverThirst Water</strong>, <strong>FIU</strong>, <strong>University of Miami Bascom Palmer</strong>.</p>
         <div class="tags">
-          <span class="tag">Web Dev</span><span class="tag">AI Schema 9+/10</span><span class="tag">Google Ads</span><span class="tag">SEO</span><span class="tag">GitHub Pages</span><span class="tag">Make.com</span><span class="tag">Google Sheets CMS</span><span class="tag">Laravel</span><span class="tag">WordPress</span>
+          <span class="tag">Web Dev</span><span class="tag">SEO / AIO 90+ Targets</span><span class="tag">Google Ads</span><span class="tag">SEO</span><span class="tag">GitHub Pages</span><span class="tag">n8n</span><span class="tag">Google Sheets CMS</span><span class="tag">Laravel</span><span class="tag">WordPress</span>
         </div>
       </div>
     </div>
@@ -414,18 +471,24 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
     <!-- STASHBOX RADIO -->
     <div class="exp-item exp-feature" id="stashbox-radio">
       <div class="exp-meta">
-        <div class="exp-years">June 2026</div>
+        <div class="exp-years">Dec 2025 – Present</div>
         <div class="exp-company">STASHBOX RADIO</div>
         <div class="exp-role">Founder &amp; Product Architect<br>Custom Music, Video, Commerce, Ads, CMS &amp; Analytics Platform</div>
       </div>
       <div class="exp-body">
         <p class="exp-eyebrow">Built from scratch</p>
         <h4>Full Custom Music Media Platform Built From Scratch</h4>
+
+        <div class="project-visual">
+          <img src="assets/stashbox-radio-interface.jpg" alt="Stashbox Radio interface preview" loading="lazy">
+          <div class="project-visual-caption"><span>Custom music + video + advertising + commerce platform</span><a href="https://stashbox.com/radio/" target="_blank" rel="noopener">Open live platform</a></div>
+        </div>
+
         <div class="exp-links">
           <a class="exp-cta-button" href="https://stashbox.com/radio/" target="_blank" rel="noopener">Launch Stashbox Radio</a>
           <a class="exp-report-link" href="https://stashbox.com/radio/report/" target="_blank" rel="noopener">View Project Report</a>
         </div>
-        <p>Built Stashbox Radio from scratch as a custom RDS-backed music, video, merchandise, advertising, and analytics platform. The public experience feels simple: listeners play songs, watch videos, like, share, shop, and move through the catalog. Underneath, the system runs a custom CMS, admin dashboard, API layer, PostgreSQL database, media storage, ad controller, product placement system, and event tracking.</p>
+        <p>Conceived, architected, developed and launched Stashbox Radio as a proprietary music, video, advertising, ecommerce, analytics and content-management platform. The architecture combines HTML, CSS, JavaScript, Node.js, AWS Lambda, API Gateway, PostgreSQL/RDS, S3, REST APIs, GitHub Pages, Shopify integrations, analytics tracking and custom administration tools.</p>
         <p>The core concept is direct audience ownership. Instead of relying only on major streaming platforms, an artist, brand, or media company owns more of the listener experience directly. They get the audience data, engagement stats, product placements, and ad inventory inside their own media system.</p>
         <ul class="exp-list">
           <li>Built a custom song CMS for managing audio, artwork, video links, metadata, visibility, product URLs, public notes, and backend stats.</li>
@@ -448,6 +511,43 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
       </div>
     </div>
 
+
+    <!-- SOLARMEISTER -->
+    <div class="exp-item exp-feature" id="solarmeister">
+      <div class="exp-meta">
+        <div class="exp-years">2026</div>
+        <div class="exp-company">SOLARMEISTER</div>
+        <div class="exp-role">Featured Growth &amp; Commerce Build<br>Germany-only · German-language Residential Solar</div>
+      </div>
+      <div class="exp-body">
+        <p class="exp-eyebrow">Brand + ecommerce + acquisition stack</p>
+        <h4>Built a German Solar Ecommerce Brand From Concept to Market</h4>
+        <div class="exp-links">
+          <a class="exp-cta-button" href="https://solarmeister-shop.de/" target="_blank" rel="noopener">Visit SolarMeister</a>
+        </div>
+        <div class="project-visual">
+          <img src="https://image.thum.io/get/width/1400/crop/760/https://solarmeister-shop.de/" alt="SolarMeister Germany ecommerce website preview" loading="lazy">
+          <div class="project-visual-caption"><span>Germany-only solar ecommerce brand for Neckermann Strom GmbH</span><a href="https://solarmeister-shop.de/" target="_blank" rel="noopener">View live store</a></div>
+        </div>
+        <p>Built SolarMeister from concept to market as a Germany-only, German-language residential solar ecommerce brand for Neckermann Strom GmbH. Developed the positioning, visual identity, customer experience, site architecture, product taxonomy, German-language content, ecommerce operations, SEO/AIO strategy, analytics, paid-search infrastructure, social presence and launch program.</p>
+        <ul class="exp-list">
+          <li>Designed and developed the Shopify platform supporting approximately 3,000 purchasable product variations across residential solar systems, panels, batteries, inverters, mounting hardware, accessories and related categories.</li>
+          <li>Developed supplier-product synchronization workflows governing availability, product status, pricing and variants.</li>
+          <li>Built the acquisition stack across Google Search Console, Google Merchant Center, Google Ads, Google Business Profile, GA4, product feeds, conversion tracking, sitemaps, structured data and search visibility.</li>
+          <li>Created customer-facing tools including a product finder, FAQ architecture, educational content, buying guides, promotional campaigns, affiliate concepts and conversion-focused product journeys.</li>
+          <li>Managed Germany-specific ecommerce requirements spanning VAT treatment, shipping logic, returns, product safety information, privacy/GDPR considerations, merchant verification and customer-service infrastructure.</li>
+        </ul>
+        <div class="exp-metrics">
+          <div class="metric-card"><strong>3,000</strong><span>Approx. purchasable variations</span></div>
+          <div class="metric-card"><strong>DE</strong><span>Germany-only market</span></div>
+          <div class="metric-card"><strong>Full Stack</strong><span>Brand through acquisition</span></div>
+        </div>
+        <div class="tags">
+          <span class="tag">Shopify</span><span class="tag">German Ecommerce</span><span class="tag">SEO / AIO</span><span class="tag">Google Merchant Center</span><span class="tag">Google Ads</span><span class="tag">GA4</span><span class="tag">Product Feeds</span><span class="tag">Automation</span><span class="tag">GDPR</span>
+        </div>
+      </div>
+    </div>
+
     <!-- STASHBOX -->
     <div class="exp-item">
       <div class="exp-meta">
@@ -457,7 +557,7 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
       </div>
       <div class="exp-body">
         <h4>Music Production, Artist Branding &amp; Global Distribution</h4>
-        <p>Grew Stashbox YouTube channel from 115 to 6,500+ subscribers in under 6 months. Distributed 170+ original songs worldwide across Spotify, YouTube Music, and Apple Music spanning reggae, hip-hop, pop, and meditative/ambient. Produced tracks for <strong>Tahiti Cora</strong> (South Florida Top 20 Influencer) and <strong>The Ras Box</strong> with multiple tracks trending on Instagram and Facebook Reels. Launched Stashbox.ai merch store with AI-generated artwork.</p>
+        <p>Produced and distributed 170+ original songs across Spotify, Apple Music, YouTube Music and social platforms using hybrid workflows spanning traditional audio production, AI-assisted composition, voice, imagery, video and branded creative. Grew the Stashbox YouTube channel from 115 to 6,700+ subscribers in approximately two months through platform-specific content development, paid amplification, batch production and continuous optimization.</p>
         <div class="tags">
           <span class="tag">Music Production</span><span class="tag">YouTube Growth</span><span class="tag">Global Distribution</span><span class="tag">Artist Branding</span><span class="tag">AI Merch</span>
         </div>
@@ -558,10 +658,10 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
 </section>
 <div style="position:relative;z-index:1;border-bottom:1px solid var(--border)">
   <div class="skills-grid">
-    <div class="skill-block"><h3>SOCIAL &amp; CONTENT</h3><ul class="skill-list"><li>YouTube Channel Strategy</li><li>Platform-Native Storytelling</li><li>Video Content Creation</li><li>Paid Social Amplification</li><li>Creator-Led Content</li><li>B2B Tech Content</li><li>Performance Analytics</li></ul></div>
-    <div class="skill-block"><h3>AI &amp; AUTOMATION</h3><ul class="skill-list"><li>ChatGPT · Claude · Gemini</li><li>MidJourney · FLUX.2</li><li>Runway ML · Sora · Veo</li><li>Suno · ElevenLabs</li><li>n8n · Make.com</li><li>AI Search Optimization</li><li>AI Workflow Automation</li></ul></div>
-    <div class="skill-block"><h3>DIGITAL PRODUCTION</h3><ul class="skill-list"><li>HTML · CSS · JavaScript</li><li>GitHub Pages Deployments</li><li>Shopify · Laravel · WordPress</li><li>Photoshop · Figma</li><li>DaVinci Resolve · OBS</li><li>ProTools Audio</li><li>Google Ads · SEO · GSC</li></ul></div>
-    <div class="skill-block"><h3>PROJECT OPS</h3><ul class="skill-list"><li>Jira · Confluence</li><li>Salesforce · Workday</li><li>Agile Leadership</li><li>Integrated Marketing</li><li>CRM Optimization</li><li>Brand Governance</li><li>Vendor Management</li></ul></div>
+    <div class="skill-block"><h3>CONTENT PRODUCTION</h3><ul class="skill-list"><li>AI Video Production</li><li>Branded Social Content</li><li>Image Generation</li><li>Custom Music &amp; Voice</li><li>YouTube Growth</li><li>Paid Amplification</li><li>Multi-Profile Social Operations</li></ul></div>
+    <div class="skill-block"><h3>AI &amp; AUTOMATION</h3><ul class="skill-list"><li>Claude · ChatGPT · Gemini</li><li>AI-Assisted Coding</li><li>Agentic Workflows</li><li>MidJourney · FLUX</li><li>Runway AI Video</li><li>Suno · ElevenLabs</li><li>n8n Workflow Design</li></ul></div>
+    <div class="skill-block"><h3>WEB · CLOUD · COMMERCE</h3><ul class="skill-list"><li>HTML · CSS · JavaScript</li><li>PHP · Laravel · Node.js</li><li>AWS Lambda · API Gateway</li><li>S3 · PostgreSQL / RDS</li><li>Shopify · Product Feeds</li><li>GitHub Pages · WordPress</li><li>GA4 · Conversion Tracking</li></ul></div>
+    <div class="skill-block"><h3>SEARCH · PAID · OPERATIONS</h3><ul class="skill-list"><li>Technical SEO · JSON-LD</li><li>AI Search Optimization</li><li>Google Search Console</li><li>Google Ads · Paid Social</li><li>Salesforce · Jira · Confluence</li><li>Airtable · Agile</li><li>Global Production Leadership</li></ul></div>
   </div>
 </div>
 
@@ -572,6 +672,8 @@ body{background:var(--black);color:var(--text-body);font-family:var(--font-body)
 <div style="position:relative;z-index:1;border-bottom:1px solid var(--border)">
   <div class="links-grid">
     <a href="https://elettro.com" target="_blank" class="link-card"><span class="link-category">Agency · Portfolio</span><span class="link-name">ELETTRO.COM</span><span class="link-desc">Full-service creative production &amp; digital agency. Web, SEO, AI, Google Ads, content.</span></a>
+    <a href="https://solarmeister-shop.de/" target="_blank" class="link-card"><span class="link-category">Ecommerce · Germany</span><span class="link-name">SOLARMEISTER</span><span class="link-desc">Germany-only German-language residential solar brand built from concept through Shopify, product operations, SEO/AIO, analytics and launch.</span></a>
+    <a href="https://stashbox.com/radio/" target="_blank" class="link-card"><span class="link-category">Product · Media Platform</span><span class="link-name">STASHBOX RADIO</span><span class="link-desc">Custom AWS-backed music, video, ads, commerce, analytics and CMS platform.</span></a>
     <a href="https://AIOAuthority.com" target="_blank" class="link-card"><span class="link-category">AI Optimization</span><span class="link-name">AIOAUTHORITY.COM</span><span class="link-desc">Dedicated AI search optimization division. Entity schema, voice agents, LLM visibility.</span></a>
     <a href="https://stashbox.com" target="_blank" class="link-card"><span class="link-category">Music</span><span class="link-name">STASHBOX.COM</span><span class="link-desc">Music production home. South Florida live band &amp; 170+ global releases.</span></a>
     <a href="https://youtube.com/@stashboxband" target="_blank" class="link-card"><span class="link-category">YouTube · Music</span><span class="link-name">@STASHBOXBAND</span><span class="link-desc">Official Stashbox artist channel. Originals, tributes &amp; live performances.</span></a>
